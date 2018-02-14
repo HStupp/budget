@@ -1,0 +1,13 @@
+<ng-container *ngIf="!rerender">
+<div id="monthPicker">
+<strong> Month Picker   </strong>
+<input style="width:55px;"[(ngModel)]="monthYear" #monthPicker placeholder="YYYYMM" (input)="monthYearClick(monthPicker.value);">
+<!-- <button (click)="monthYearClick(monthPicker.value);"> View Month </button> -->
+  <button (click)="showBreakdownChart(monthPicker.value);">Expense Chart </button>
+  <strong> Monthly Income </strong>
+  $<input style="width: 80px;" [(ngModel)]="totalIncome" #income value="">
+  <button (click)="incomeChanged(income.value)">Save</button>
+  <button (click)="showIncomeChart(monthPicker.value);">Expense/Income Chart</button>
+</div>
+<app-budget-category [monthYear]="monthYear" [budgetItems]='budgetItems'></app-budget-category>
+</ng-container>

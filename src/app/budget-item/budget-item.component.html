@@ -1,0 +1,12 @@
+<ul class="heroes" id="ul{{category.name}}">
+  <li *ngFor="let item of budgetItems">
+    <div id="li{{item.id}}">{{item.id}}
+    <span class="badge">{{item.name}}</span>
+    <span> &nbsp; ${{item.amount}}
+    <button (click)="onSelect(item)" [class.seleted]="item === selectedHero">Edit</button>
+    <button (click)="deleteSelect(item)">X</button>
+    </span>
+    </div>
+  </li>
+</ul>
+<app-item-detail [item]="selectedItem" [monthYear]='monthYear'> </app-item-detail>

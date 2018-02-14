@@ -1,0 +1,59 @@
+<div id="chartarea" class="hidden">
+  <div class="charttable">
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Percent</th>
+    </tr>
+    <tr *ngFor="let category of categories">
+      <td> {{category.name}}</td>
+      <td> ${{category.amount}}</td>
+      <td> {{(100*category.amount / total).toFixed(2)}}% </td>
+    </tr>
+  </table>
+
+  <strong>TOTAL EXPENSES: ${{total}}</strong>
+</div>
+<div class="chart">
+  <h2 style="text-align:center;">Expense Breakdown</h2>
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+</div>
+<div id="incomechartarea" class="hidden">
+  <div class="charttable">
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Percent</th>
+    </tr>
+    <tr *ngFor="let category of categories">
+      <td> {{category.name}}</td>
+      <td> ${{category.amount}}</td>
+      <td> {{(100*category.amount / totalIncome).toFixed(2)}}% </td>
+    </tr>
+  </table>
+
+  <p><strong>Expenses:</strong> ${{total}}</p>
+  <p><strong>Income: </strong>${{totalIncome}}</p>
+  <p><strong>Savings:</strong> ${{totalIncome - total}}</p>
+  <p><strong>Total Expense:</strong> {{(total/totalIncome*100).toFixed(2)}}%</p>
+  <p><strong>Savings Rate</strong>: {{((1 -(total/totalIncome))*100).toFixed(2)}}%</p>
+</div>
+
+<div class="chart">
+  <h2 style="text-align:center;">Expense As % Of Income</h2>
+  <canvas baseChart
+          [data]="incomeChartData"
+          [labels]="incomeChartLabels"
+          [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+</div>

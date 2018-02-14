@@ -1,0 +1,15 @@
+<div *ngIf="item && !rerender" id="edit{{item.category}}" class="edit">
+  <h2>{{ item.name | uppercase }} Details
+    <button class="close" (click)="closeClick(item.category);">X</button>
+  </h2>
+  <div><label>amount: $<input #itemAmount placeholder="{{item.amount}}" value="{{item.amount}}"> </label> </div>
+  <div>
+    <label>name:
+    <input #itemName value="{{item.name}}" placeholder="{{item.name}}">
+  </label>
+  <label>category:
+    <input #itemCategory value="{{item.category}}" placeholder="{{item.category}}">
+  </label>
+  </div>
+  <p> <button (click)="saveClick(item.id, itemName.value, itemCategory.value, itemAmount.value)">Save?</button></p>
+</div>

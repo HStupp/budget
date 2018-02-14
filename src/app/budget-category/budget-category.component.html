@@ -1,0 +1,25 @@
+<section *ngIf="!rerender">
+
+  <div class='addModal hidden' id='addmodal'>
+    <span class='close' (click)='closeAddClick();'>X</span>
+      <p><label> Name: <input #itemName> </label>
+        <label> Category: {{selectedCategory.name}} </label>
+      </p>
+        <p> <label> Amount: $<input #itemAmount> </label>
+        </p>
+        <p> <label> Category: <input #newCategory placeholder="{{selectedCategory.name}}" value="{{selectedCategory.name}}"> </label>
+        <button
+          (click)="add(itemName.value, itemAmount.value, newCategory.value);itemName.value='';itemAmount.value='';"
+          >Confirm?
+        </button>
+      </p>
+</div>
+
+<div *ngFor="let category of budgetCategories" class="category">
+  <h2>{{category.name}}
+    <button id="btnAdd{{category.name}}" (click)="addClick(category.name)" class='addItem'>Add Item</button>
+  </h2>
+  <app-budget-item [category]="category" [color]="category.color" [monthYear]="monthYear" [isCurrentMonth]="isCurrentMonth"></app-budget-item>
+</div>
+</section>
+<app-budget-chart [monthYear]="monthYear" [budgetItems]='budgetItems'></app-budget-chart>

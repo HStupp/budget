@@ -1,0 +1,7 @@
+.hidden {display: none !important;}
+#chartarea, #incomechartarea {position: absolute;top: 140px;background-color: antiquewhite; width:850px;border: 2px solid red; border-radius:10px; overflow:auto; left:50px; }
+table {width: 200px;}
+canvas {width: 500px;}
+div.charttable {display:inline-block;float:left; width:25%;}
+div.chart {display:inline-block; width: 75%;}
+div.chart h2 {font-size: 1.5em !important;}

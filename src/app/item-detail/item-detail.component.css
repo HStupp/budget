@@ -1,0 +1,2 @@
+div.hidden {display:none !important;}
+div.edit {z-index: 1; background-color: aquamarine; display:block; position:absolute;}

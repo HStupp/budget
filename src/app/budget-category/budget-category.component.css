@@ -1,0 +1,13 @@
+div.editmodal { position: absolute; z-index: 1; background-color: coral; margin-top: 50px;}
+
+div.category { display: inline-grid;background-color: aliceblue;height: 300px;border: 2px solid lightblue;width: 300px;overflow: auto;margin: 1px;border-radius: 10px;}
+
+.new { color:red;}
+
+div.category h2 {font-size: 1.5em !important;}
+
+.hidden {display:none !important;}
+
+div.addModal {top: 25px; left:25px; right:25px; position: fixed; height: 100%; background-color: lightgray; width: calc(100% - 50px); z-index: 1;}
+
+span.close {float:right; font-size:3em; font-family: sans-serif; padding-right: .5em; padding-top: .25em; padding-left: .5em; padding-bottom: .25em; cursor: pointer; background-color: grey;}
